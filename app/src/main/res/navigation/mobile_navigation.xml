@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="sv.edu.ues.fia.eisi.fia.ui.home.HomeFragment"
+        android:name="sv.edu.ues.fia.eisi.fia.Evaluaciones"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_evaluaciones" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="sv.edu.ues.fia.eisi.fia.ui.gallery.GalleryFragment"
+        android:name="sv.edu.ues.fia.eisi.fia.Expediente"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_expediente" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="sv.edu.ues.fia.eisi.fia.ui.slideshow.SlideshowFragment"
+        android:name="sv.edu.ues.fia.eisi.fia.Evaluaciones"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_evaluaciones" />
 </navigation>
