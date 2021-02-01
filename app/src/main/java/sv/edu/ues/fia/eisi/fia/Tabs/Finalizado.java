@@ -67,7 +67,7 @@ public class Finalizado extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_finalizado, container, false);
         evaluacionesAdapter = new EvaluacionesAdapter();
-        RecyclerView recyclerEvaluaciones = view.findViewById(R.id.recycler_evaluaciones_pendientes);
+        RecyclerView recyclerEvaluaciones = view.findViewById(R.id.recycler_evaluaciones_finalizado);
         recyclerEvaluaciones.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerEvaluaciones.setAdapter(evaluacionesAdapter);
         return view;
