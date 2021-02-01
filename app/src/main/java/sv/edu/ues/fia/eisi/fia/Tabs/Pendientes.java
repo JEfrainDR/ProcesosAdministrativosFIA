@@ -1,4 +1,4 @@
-package sv.edu.ues.fia.eisi.fia;
+package sv.edu.ues.fia.eisi.fia.Tabs;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import sv.edu.ues.fia.eisi.fia.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Evaluaciones#newInstance} factory method to
+ * Use the {@link Pendientes#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Evaluaciones extends Fragment {
+public class Pendientes extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class Evaluaciones extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Evaluaciones() {
+    public Pendientes() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class Evaluaciones extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Evaluaciones.
+     * @return A new instance of fragment Pendientes.
      */
     // TODO: Rename and change types and number of parameters
-    public static Evaluaciones newInstance(String param1, String param2) {
-        Evaluaciones fragment = new Evaluaciones();
+    public static Pendientes newInstance(String param1, String param2) {
+        Pendientes fragment = new Pendientes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class Evaluaciones extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_evaluaciones, container, false);
+        return inflater.inflate(R.layout.fragment_pendientes, container, false);
     }
 }

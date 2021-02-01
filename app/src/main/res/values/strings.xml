@@ -13,9 +13,12 @@
 
     <string name="menu_home">Evaluaciones</string>
     <string name="menu_gallery">Expediente</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow">Cerrar Sesión</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="item_en_curso">EN CURSO</string>
     <string name="item_pendientes">PENDIENTES</string>
     <string name="item_finalizado">FINALIZADO</string>
+    <string name="title_activity_evaluaciones2">Evaluaciones2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

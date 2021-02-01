@@ -1,22 +1,21 @@
-package sv.edu.ues.fia.eisi.fia;
+package sv.edu.ues.fia.eisi.fia.Tabs;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.tabs.TabLayout;
+import sv.edu.ues.fia.eisi.fia.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Expediente#newInstance} factory method to
+ * Use the {@link EnCurso#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Expediente extends Fragment {
+public class EnCurso extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +26,7 @@ public class Expediente extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Expediente() {
+    public EnCurso() {
         // Required empty public constructor
     }
 
@@ -37,11 +36,11 @@ public class Expediente extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Expediente.
+     * @return A new instance of fragment EnCurso.
      */
     // TODO: Rename and change types and number of parameters
-    public static Expediente newInstance(String param1, String param2) {
-        Expediente fragment = new Expediente();
+    public static EnCurso newInstance(String param1, String param2) {
+        EnCurso fragment = new EnCurso();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,10 +61,6 @@ public class Expediente extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_expediente, container, false);
-        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
-        ViewPager viewPager = view.findViewById(R.id.viewPager);
-        tabLayout.setupWithViewPager(viewPager);
-        return view;
+        return inflater.inflate(R.layout.fragment_en_curso, container, false);
     }
 }

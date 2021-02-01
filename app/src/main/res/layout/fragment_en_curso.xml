@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
-    tools:context=".Fragments.Expediente">
+    tools:context=".Tabs.EnCurso">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
