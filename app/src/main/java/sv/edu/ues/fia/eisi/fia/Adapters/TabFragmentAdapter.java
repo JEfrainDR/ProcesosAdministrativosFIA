@@ -1,10 +1,14 @@
-package sv.edu.ues.fia.eisi.fia.Tabs;
+package sv.edu.ues.fia.eisi.fia.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import sv.edu.ues.fia.eisi.fia.Tabs.EnCurso;
+import sv.edu.ues.fia.eisi.fia.Tabs.Finalizado;
+import sv.edu.ues.fia.eisi.fia.Tabs.Pendientes;
 
 public class TabFragmentAdapter extends FragmentPagerAdapter {
     int numTabs;

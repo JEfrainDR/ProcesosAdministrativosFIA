@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.google.android.material.tabs.TabLayout;
 
 import sv.edu.ues.fia.eisi.fia.R;
-import sv.edu.ues.fia.eisi.fia.Tabs.TabFragmentAdapter;
+import sv.edu.ues.fia.eisi.fia.Adapters.TabFragmentAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -21,4 +21,6 @@
     <string name="title_activity_evaluaciones2">Evaluaciones2</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="text_fecha_inicio">Fecha Inicio: </string>
+    <string name="text_fecha_fin">"Fecha Fin: "</string>
 </resources>

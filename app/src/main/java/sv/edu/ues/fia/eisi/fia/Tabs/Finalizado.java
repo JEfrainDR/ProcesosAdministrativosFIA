@@ -3,11 +3,14 @@ package sv.edu.ues.fia.eisi.fia.Tabs;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import sv.edu.ues.fia.eisi.fia.Adapters.EvaluacionesAdapter;
 import sv.edu.ues.fia.eisi.fia.R;
 
 /**
@@ -25,6 +28,7 @@ public class Finalizado extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private EvaluacionesAdapter evaluacionesAdapter;
 
     public Finalizado() {
         // Required empty public constructor
@@ -61,6 +65,11 @@ public class Finalizado extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_finalizado, container, false);
+        View view = inflater.inflate(R.layout.fragment_finalizado, container, false);
+        evaluacionesAdapter = new EvaluacionesAdapter();
+        RecyclerView recyclerEvaluaciones = view.findViewById(R.id.recycler_evaluaciones_pendientes);
+        recyclerEvaluaciones.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerEvaluaciones.setAdapter(evaluacionesAdapter);
+        return view;
     }
 }
