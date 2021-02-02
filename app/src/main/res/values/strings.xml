@@ -24,4 +24,12 @@
     <string name="text_fecha_inicio">Fecha Inicio: </string>
     <string name="text_fecha_fin">"Fecha Fin: "</string>
     <string name="action_programar_evaluacion">Programar Evaluación</string>
+    <string name="text_asignatura">Asignatura:</string>
+    <string name="text_titulo">Título:</string>
+    <string name="text_nueva_evaluacion">Nueva Evaluación</string>
+    <string name="text_descripcion">Descripción:</string>
+    <string name="text_fecha_de_inicio">Fecha De Inicio:</string>
+    <string name="text_fecha_de_fin">Fecha De Finalización:</string>
+    <string name="text_guardar">GUARDAR</string>
+    <string name="text_cancelar">CANCELAR</string>
 </resources>

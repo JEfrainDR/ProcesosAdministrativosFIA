@@ -56,6 +56,14 @@ public class Evaluacion {
 
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public int getIdEvaluacion() {
         return idEvaluacion;
     }
