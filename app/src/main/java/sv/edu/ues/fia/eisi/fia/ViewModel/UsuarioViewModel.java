@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Usuario;
-import sv.ues.fia.eisi.proyectopdm.repository.UsuarioRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Usuario;
+import sv.edu.ues.fia.eisi.fia.repository.UsuarioRepository;
 
 public class UsuarioViewModel extends AndroidViewModel {
 

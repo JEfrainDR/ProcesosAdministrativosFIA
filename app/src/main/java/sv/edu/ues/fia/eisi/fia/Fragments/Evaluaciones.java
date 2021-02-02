@@ -1,16 +1,23 @@
 package sv.edu.ues.fia.eisi.fia.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
+import sv.edu.ues.fia.eisi.fia.Activities.NuevaEvaluacionActivity;
 import sv.edu.ues.fia.eisi.fia.R;
 import sv.edu.ues.fia.eisi.fia.Adapters.TabFragmentAdapter;
 
@@ -59,6 +66,7 @@ public class Evaluaciones extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -67,11 +75,20 @@ public class Evaluaciones extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_evaluaciones, container, false);
         TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        FloatingActionButton btnAddEvaluacion = view.findViewById(R.id.btn_add_evaluacion);
         final ViewPager viewPager = view.findViewById(R.id.viewPager);
 
         final TabFragmentAdapter tabFragmentAdapter = new TabFragmentAdapter(getActivity().getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(tabFragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        btnAddEvaluacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NuevaEvaluacionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_playlist_play_24);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_view_headline_24);
@@ -83,5 +100,21 @@ public class Evaluaciones extends Fragment {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.options_menu_evaluaciones_fragment,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_add_evaluacion:
+                Intent intent = new Intent(getActivity(), NuevaEvaluacionActivity.class);
+                startActivity(intent);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.OpcionCrud;
-import sv.ues.fia.eisi.proyectopdm.repository.OpcionCrudRepository;
+import sv.edu.ues.fia.eisi.fia.entity.OpcionCrud;
+import sv.edu.ues.fia.eisi.fia.repository.OpcionCrudRepository;
 
 public class OpcionCrudViewModel extends AndroidViewModel {
 

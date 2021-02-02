@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Alumno;
-import sv.ues.fia.eisi.proyectopdm.repository.AlumnoRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Alumno;
+import sv.edu.ues.fia.eisi.fia.repository.AlumnoRepository;
 
 
 public class AlumnoViewModel extends AndroidViewModel {

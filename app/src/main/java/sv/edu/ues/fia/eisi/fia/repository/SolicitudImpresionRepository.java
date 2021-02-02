@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.SolicitudImpresionDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.SolicitudImpresion;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.SolicitudImpresionDao;
+import sv.edu.ues.fia.eisi.fia.entity.SolicitudImpresion;
 
 public class SolicitudImpresionRepository {
     private SolicitudImpresionDao solicitudImpresionDao;

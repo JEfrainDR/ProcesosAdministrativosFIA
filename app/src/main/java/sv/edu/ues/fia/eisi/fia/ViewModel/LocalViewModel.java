@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Local;
-import sv.ues.fia.eisi.proyectopdm.repository.LocalRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Local;
+import sv.edu.ues.fia.eisi.fia.repository.LocalRepository;
 
 public class LocalViewModel extends AndroidViewModel {
 

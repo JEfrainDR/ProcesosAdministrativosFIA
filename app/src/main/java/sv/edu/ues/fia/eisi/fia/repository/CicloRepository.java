@@ -10,9 +10,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.CicloDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Ciclo;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.CicloDao;
+import sv.edu.ues.fia.eisi.fia.entity.Ciclo;
+
 
 public class CicloRepository {
     //Atributos de Clase

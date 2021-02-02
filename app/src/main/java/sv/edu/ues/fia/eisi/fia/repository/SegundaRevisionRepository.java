@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.SegundaRevisionDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.SegundaRevision;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.SegundaRevisionDao;
+import sv.edu.ues.fia.eisi.fia.entity.SegundaRevision;
 
 public class SegundaRevisionRepository {
     //atributos

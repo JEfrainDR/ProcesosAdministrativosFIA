@@ -10,11 +10,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.PrimeraRevisionDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Docente;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Evaluacion;
-import sv.ues.fia.eisi.proyectopdm.db.entity.PrimeraRevision;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.PrimeraRevisionDao;
+import sv.edu.ues.fia.eisi.fia.entity.Docente;
+import sv.edu.ues.fia.eisi.fia.entity.Evaluacion;
+import sv.edu.ues.fia.eisi.fia.entity.PrimeraRevision;
 
 public class PrimeraRevisionRepository {
 

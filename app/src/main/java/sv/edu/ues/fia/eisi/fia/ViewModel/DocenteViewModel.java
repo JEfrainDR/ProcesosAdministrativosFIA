@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Docente;
-import sv.ues.fia.eisi.proyectopdm.repository.DocenteRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Docente;
+import sv.edu.ues.fia.eisi.fia.repository.DocenteRepository;
 
 public class DocenteViewModel extends AndroidViewModel {
     //atributos

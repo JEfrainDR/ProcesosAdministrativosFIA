@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.AreaAdmDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.AreaAdm;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.AreaAdmDao;
+import sv.edu.ues.fia.eisi.fia.entity.AreaAdm;
 
 public class AreaAdmRepository {
     //atributos

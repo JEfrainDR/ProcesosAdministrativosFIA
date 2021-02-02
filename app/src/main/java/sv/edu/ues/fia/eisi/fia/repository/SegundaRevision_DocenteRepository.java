@@ -10,12 +10,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.SegundaRevision_DocenteDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Cargo;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Docente;
-import sv.ues.fia.eisi.proyectopdm.db.entity.SegundaRevision;
-import sv.ues.fia.eisi.proyectopdm.db.entity.SegundaRevision_Docente;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.SegundaRevision_DocenteDao;
+import sv.edu.ues.fia.eisi.fia.entity.Cargo;
+import sv.edu.ues.fia.eisi.fia.entity.Docente;
+import sv.edu.ues.fia.eisi.fia.entity.SegundaRevision;
+import sv.edu.ues.fia.eisi.fia.entity.SegundaRevision_Docente;
 
 public class SegundaRevision_DocenteRepository {
     private SegundaRevision_DocenteDao segundaRevision_DocenteDao;

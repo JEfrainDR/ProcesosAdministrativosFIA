@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Alumno;
-import sv.ues.fia.eisi.proyectopdm.db.entity.DetalleEvaluacion;
-import sv.ues.fia.eisi.proyectopdm.repository.DetalleEvaluacionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Alumno;
+import sv.edu.ues.fia.eisi.fia.entity.DetalleEvaluacion;
+import sv.edu.ues.fia.eisi.fia.repository.DetalleEvaluacionRepository;
 
 public class DetalleEvaluacionViewModel extends AndroidViewModel {
 

@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.EscuelaDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Escuela;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.EscuelaDao;
+import sv.edu.ues.fia.eisi.fia.entity.Escuela;
 
 /*
     Las clases Repository se encargan de la conexion con las clases DAO para operaciones de datos

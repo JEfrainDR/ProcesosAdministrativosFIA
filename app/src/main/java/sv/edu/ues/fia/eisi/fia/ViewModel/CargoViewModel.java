@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Cargo;
-import sv.ues.fia.eisi.proyectopdm.repository.CargoRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Cargo;
+import sv.edu.ues.fia.eisi.fia.repository.CargoRepository;
 
 public class CargoViewModel extends AndroidViewModel {
 

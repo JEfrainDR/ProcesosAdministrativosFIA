@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Alumno;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Asignatura;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Docente;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Escuela;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Evaluacion;
-import sv.ues.fia.eisi.proyectopdm.db.entity.TipoEvaluacion;
-import sv.ues.fia.eisi.proyectopdm.repository.EvaluacionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Alumno;
+import sv.edu.ues.fia.eisi.fia.entity.Asignatura;
+import sv.edu.ues.fia.eisi.fia.entity.Docente;
+import sv.edu.ues.fia.eisi.fia.entity.Escuela;
+import sv.edu.ues.fia.eisi.fia.entity.Evaluacion;
+import sv.edu.ues.fia.eisi.fia.entity.TipoEvaluacion;
+import sv.edu.ues.fia.eisi.fia.repository.EvaluacionRepository;
 
 public class EvaluacionViewModel extends AndroidViewModel {
 

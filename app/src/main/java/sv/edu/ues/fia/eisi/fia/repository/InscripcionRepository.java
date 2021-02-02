@@ -10,12 +10,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.InscripcionDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Alumno;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Asignatura;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Escuela;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Inscripcion;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.InscripcionDao;
+import sv.edu.ues.fia.eisi.fia.entity.Alumno;
+import sv.edu.ues.fia.eisi.fia.entity.Asignatura;
+import sv.edu.ues.fia.eisi.fia.entity.Escuela;
+import sv.edu.ues.fia.eisi.fia.entity.Inscripcion;
 
 public class InscripcionRepository {
     private InscripcionDao inscripcionDao;

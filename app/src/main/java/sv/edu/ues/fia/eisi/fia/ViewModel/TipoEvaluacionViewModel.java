@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.TipoEvaluacion;
-import sv.ues.fia.eisi.proyectopdm.repository.TipoEvaluacionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.TipoEvaluacion;
+import sv.edu.ues.fia.eisi.fia.repository.TipoEvaluacionRepository;
 
 public class TipoEvaluacionViewModel extends AndroidViewModel {
     //atributos

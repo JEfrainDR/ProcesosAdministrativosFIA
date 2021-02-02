@@ -8,11 +8,11 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Alumno;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Asignatura;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Escuela;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Inscripcion;
-import sv.ues.fia.eisi.proyectopdm.repository.InscripcionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Alumno;
+import sv.edu.ues.fia.eisi.fia.entity.Asignatura;
+import sv.edu.ues.fia.eisi.fia.entity.Escuela;
+import sv.edu.ues.fia.eisi.fia.entity.Inscripcion;
+import sv.edu.ues.fia.eisi.fia.repository.InscripcionRepository;
 
 public class InscripcionViewModel extends AndroidViewModel {
     private InscripcionRepository repository;

@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.EncargadoImpresion;
-import sv.ues.fia.eisi.proyectopdm.repository.EncargadoImpresionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.EncargadoImpresion;
+import sv.edu.ues.fia.eisi.fia.repository.EncargadoImpresionRepository;
 
 public class EncargadoImpresionViewModel extends AndroidViewModel {
     private EncargadoImpresionRepository encargadoImpresionRepository;

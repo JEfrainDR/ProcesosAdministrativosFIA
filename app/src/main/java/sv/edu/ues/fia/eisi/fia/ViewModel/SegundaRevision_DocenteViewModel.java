@@ -8,11 +8,11 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Cargo;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Docente;
-import sv.ues.fia.eisi.proyectopdm.db.entity.SegundaRevision;
-import sv.ues.fia.eisi.proyectopdm.db.entity.SegundaRevision_Docente;
-import sv.ues.fia.eisi.proyectopdm.repository.SegundaRevision_DocenteRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Cargo;
+import sv.edu.ues.fia.eisi.fia.entity.Docente;
+import sv.edu.ues.fia.eisi.fia.entity.SegundaRevision;
+import sv.edu.ues.fia.eisi.fia.entity.SegundaRevision_Docente;
+import sv.edu.ues.fia.eisi.fia.repository.SegundaRevision_DocenteRepository;
 
 public class SegundaRevision_DocenteViewModel extends AndroidViewModel {
     private SegundaRevision_DocenteRepository repositorio;

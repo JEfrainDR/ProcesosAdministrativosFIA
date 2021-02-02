@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.OpcionCrudDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.OpcionCrud;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.OpcionCrudDao;
+import sv.edu.ues.fia.eisi.fia.entity.OpcionCrud;
 
 public class OpcionCrudRepository {
 

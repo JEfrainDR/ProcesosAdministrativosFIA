@@ -23,4 +23,5 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="text_fecha_inicio">Fecha Inicio: </string>
     <string name="text_fecha_fin">"Fecha Fin: "</string>
+    <string name="action_programar_evaluacion">Programar Evaluación</string>
 </resources>

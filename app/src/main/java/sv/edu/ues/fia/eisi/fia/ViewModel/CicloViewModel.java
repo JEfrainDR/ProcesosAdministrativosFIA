@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Ciclo;
-import sv.ues.fia.eisi.proyectopdm.repository.CicloRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Ciclo;
+import sv.edu.ues.fia.eisi.fia.repository.CicloRepository;
 
 public class CicloViewModel extends AndroidViewModel {
 

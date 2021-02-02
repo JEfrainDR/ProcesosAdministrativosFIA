@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.SegundaRevision;
-import sv.ues.fia.eisi.proyectopdm.repository.SegundaRevisionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.SegundaRevision;
+import sv.edu.ues.fia.eisi.fia.repository.SegundaRevisionRepository;
 
 public class SegundaRevisionViewModel extends AndroidViewModel {
 

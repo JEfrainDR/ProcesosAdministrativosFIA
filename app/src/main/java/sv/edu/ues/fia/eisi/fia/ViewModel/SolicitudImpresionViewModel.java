@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.SolicitudImpresion;
-import sv.ues.fia.eisi.proyectopdm.repository.SolicitudImpresionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.SolicitudImpresion;
+import sv.edu.ues.fia.eisi.fia.repository.SolicitudImpresionRepository;
 
 public class SolicitudImpresionViewModel extends AndroidViewModel {
 

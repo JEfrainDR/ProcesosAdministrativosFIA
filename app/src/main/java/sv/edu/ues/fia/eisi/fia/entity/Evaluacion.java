@@ -34,6 +34,7 @@ public class Evaluacion {
     private String descripcion;
     private String fechaEntregaNotas;
     private int numParticipantes;
+    private String estado;
     private int notaMaxima;
 
 

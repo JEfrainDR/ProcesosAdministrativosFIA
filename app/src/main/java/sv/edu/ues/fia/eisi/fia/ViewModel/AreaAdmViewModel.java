@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.AreaAdm;
-import sv.ues.fia.eisi.proyectopdm.repository.AreaAdmRepository;
+import sv.edu.ues.fia.eisi.fia.entity.AreaAdm;
+import sv.edu.ues.fia.eisi.fia.repository.AreaAdmRepository;
 
 public class AreaAdmViewModel extends AndroidViewModel {
 

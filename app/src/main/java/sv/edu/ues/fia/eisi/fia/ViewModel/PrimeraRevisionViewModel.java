@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Docente;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Evaluacion;
-import sv.ues.fia.eisi.proyectopdm.db.entity.PrimeraRevision;
-import sv.ues.fia.eisi.proyectopdm.repository.PrimeraRevisionRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Docente;
+import sv.edu.ues.fia.eisi.fia.entity.Evaluacion;
+import sv.edu.ues.fia.eisi.fia.entity.PrimeraRevision;
+import sv.edu.ues.fia.eisi.fia.repository.PrimeraRevisionRepository;
 
 public class PrimeraRevisionViewModel extends AndroidViewModel {
 

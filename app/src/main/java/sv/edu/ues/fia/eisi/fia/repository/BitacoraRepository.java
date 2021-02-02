@@ -8,9 +8,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.BitacoraDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Bitacora;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.BitacoraDao;
+import sv.edu.ues.fia.eisi.fia.entity.Bitacora;
 
 public class BitacoraRepository {
 

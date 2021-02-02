@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.DataBase;
-import sv.ues.fia.eisi.proyectopdm.dao.CargoDao;
-import sv.ues.fia.eisi.proyectopdm.db.entity.Cargo;
+import sv.edu.ues.fia.eisi.fia.DataBase;
+import sv.edu.ues.fia.eisi.fia.dao.CargoDao;
+import sv.edu.ues.fia.eisi.fia.entity.Cargo;
 
 public class CargoRepository {
     private CargoDao cargoDao;

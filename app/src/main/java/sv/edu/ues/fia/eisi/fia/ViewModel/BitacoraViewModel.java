@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-import sv.ues.fia.eisi.proyectopdm.db.entity.Bitacora;
-import sv.ues.fia.eisi.proyectopdm.repository.BitacoraRepository;
+import sv.edu.ues.fia.eisi.fia.entity.Bitacora;
+import sv.edu.ues.fia.eisi.fia.repository.BitacoraRepository;
 
 public class BitacoraViewModel extends AndroidViewModel {
 
