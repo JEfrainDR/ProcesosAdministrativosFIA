@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".Fragments.OrdenarEvaluacionesDialog">
+
+
+    <RadioGroup
+        android:id="@+id/rgOrdenar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/radio_fecha_inicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio_asignatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_radio_asignatura" />
+
+        <RadioButton
+            android:id="@+id/radio_fecha_inicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_radio_fecha_inicio" />
+
+        <RadioButton
+            android:id="@+id/radio_fecha_fin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_radio_fecha_fin" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

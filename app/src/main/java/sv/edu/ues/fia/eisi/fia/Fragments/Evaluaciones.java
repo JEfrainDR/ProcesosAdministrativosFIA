@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
@@ -110,11 +111,16 @@ public class Evaluaciones extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_add_evaluacion:
-                Intent intent = new Intent(getActivity(), NuevaEvaluacionActivity.class);
-                startActivity(intent);
+            case R.id.action_ordenar_evaluacion:
+                mostrarDialogOrdenar();
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void mostrarDialogOrdenar() {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        OrdenarEvaluacionesDialog dialogo = new OrdenarEvaluacionesDialog();
+        dialogo.show(fragmentManager,"OrdenarEvaluacionesDialogo");
     }
 }

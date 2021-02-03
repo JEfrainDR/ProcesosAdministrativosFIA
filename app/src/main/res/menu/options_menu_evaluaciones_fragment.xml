@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/action_add_evaluacion"
-        android:icon="@drawable/ic_baseline_timer_24"
-        android:title="@string/action_programar_evaluacion"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/action_ordenar_evaluacion"
+        android:icon="@drawable/ic_baseline_swap_vert_24"
+        android:title="@string/text_odenar_por"
+        app:showAsAction="never" />
 </menu>

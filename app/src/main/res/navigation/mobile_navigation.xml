@@ -3,23 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_inicio">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_inicio"
+        android:name="sv.edu.ues.fia.eisi.fia.Fragments.Inicio"
+        android:label="@string/text_inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/nav_evaluaciones"
         android:name="sv.edu.ues.fia.eisi.fia.Fragments.Evaluaciones"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_evaluaciones" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_expediente"
         android:name="sv.edu.ues.fia.eisi.fia.Fragments.Expediente"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_expediente" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_logout"
         android:name="sv.edu.ues.fia.eisi.fia.Fragments.Expediente"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_expediente" />
+
+    <fragment
+        android:id="@+id/nav_notificaciones"
+        android:name="sv.edu.ues.fia.eisi.fia.Fragments.Notificaciones"
+        android:label="@string/text_notificaciones"
+        tools:layout="@layout/fragment_notificaciones" />
 </navigation>
