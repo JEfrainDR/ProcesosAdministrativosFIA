@@ -29,8 +29,8 @@
     <string name="text_titulo">Título:</string>
     <string name="text_nueva_evaluacion">Nueva Evaluación</string>
     <string name="text_descripcion">Descripción:</string>
-    <string name="text_fecha_de_inicio">Fecha De Inicio:</string>
-    <string name="text_fecha_de_fin">Fecha De Finalización:</string>
+    <string name="text_fecha_de_inicio">Fecha y Hora De Inicio:</string>
+    <string name="text_fecha_de_fin">Fecha y Hora De Finalización:</string>
     <string name="text_guardar">GUARDAR</string>
     <string name="text_cancelar">CANCELAR</string>
     <string name="text_odenar_por">Ordenar Por</string>
@@ -41,4 +41,8 @@
     <string name="text_radio_fecha_inicio">Fecha De Inicio</string>
     <string name="text_radio_fecha_fin">Fecha De Finalización</string>
     <string name="text_inicio">Inicio</string>
+    <string name="text_fecha">Fecha</string>
+    <string name="text_hora">Hora</string>
+    <string name="text_descripcion_evaluacion">Descripción Evaluación</string>
+    <string name="text_local">Local:</string>
 </resources>

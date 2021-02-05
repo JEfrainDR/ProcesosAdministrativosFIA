@@ -28,6 +28,12 @@ public class Evaluacion {
             childColumns = "codigoAsignaturaFK"
     )
     private String codigoAsignaturaFK;
+    @ForeignKey(
+            entity = Local.class,
+            parentColumns = "idLocal",
+            childColumns = "idLocalFK"
+    )
+    private String idLocalFK;
     private String nomEvaluacion;
     private String fechaInicio;
     private String fechaFin;
@@ -38,22 +44,33 @@ public class Evaluacion {
     private int notaMaxima;
 
 
-    public Evaluacion(String carnetDocenteFK, int idTipoEvaluacionFK, String codigoAsignaturaFK, String nomEvaluacion, String fechaInicio, String fechaFin, String descripcion, String fechaEntregaNotas, int numParticipantes, int notaMaxima) {
+    public Evaluacion(int idEvaluacion, String carnetDocenteFK, int idTipoEvaluacionFK, String codigoAsignaturaFK, String idLocalFK, String nomEvaluacion, String fechaInicio, String fechaFin, String descripcion, String fechaEntregaNotas, int numParticipantes, String estado, int notaMaxima) {
+        this.idEvaluacion = idEvaluacion;
         this.carnetDocenteFK = carnetDocenteFK;
         this.idTipoEvaluacionFK = idTipoEvaluacionFK;
         this.codigoAsignaturaFK = codigoAsignaturaFK;
+        this.idLocalFK = idLocalFK;
         this.nomEvaluacion = nomEvaluacion;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.descripcion = descripcion;
         this.fechaEntregaNotas = fechaEntregaNotas;
-        this.numParticipantes=numParticipantes;
+        this.numParticipantes = numParticipantes;
+        this.estado = estado;
         this.notaMaxima = notaMaxima;
     }
 
     @Ignore
     public Evaluacion() {
 
+    }
+
+    public String getIdLocalFK() {
+        return idLocalFK;
+    }
+
+    public void setIdLocalFK(String idLocalFK) {
+        this.idLocalFK = idLocalFK;
     }
 
     public String getEstado() {
