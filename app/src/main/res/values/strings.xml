@@ -45,4 +45,6 @@
     <string name="text_hora">Hora</string>
     <string name="text_descripcion_evaluacion">Descripción Evaluación</string>
     <string name="text_local">Local:</string>
+    <string name="text_recursos">Recursos:</string>
+    <string name="text_no_recursos">Añadir</string>
 </resources>

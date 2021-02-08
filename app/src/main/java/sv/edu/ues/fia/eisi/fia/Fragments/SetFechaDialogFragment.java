@@ -15,6 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import sv.edu.ues.fia.eisi.fia.R;
 
 public class SetFechaDialogFragment extends DialogFragment {
