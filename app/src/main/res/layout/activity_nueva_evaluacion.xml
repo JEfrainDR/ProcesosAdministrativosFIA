@@ -277,9 +277,9 @@
             <LinearLayout
                 android:id="@+id/layout_recursos"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical"
@@ -291,27 +291,18 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_recursos"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
                     tools:listitem="@layout/recurso_item" />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/text_no_recursos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/text_no_recursos"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/img_icon_add" />
-
             <ImageView
                 android:id="@+id/img_icon_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                app:layout_constraintEnd_toStartOf="@+id/text_no_recursos"
-                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView9"
                 app:srcCompat="@drawable/ic_baseline_add_to_photos_24" />
 
             <View
