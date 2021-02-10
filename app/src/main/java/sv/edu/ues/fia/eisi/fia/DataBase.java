@@ -555,9 +555,9 @@ public abstract class DataBase extends RoomDatabase {
                 //Evaluación
                 evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","LComp1","Parcial de prueba","11/11/2000","12/11/2005","descripción de parcial de prueba","Sin Fecha",2,"PENDIENTE",40));
                 evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","BIB301","Tarea de prueba","11/11/2000","11/11/2000","segunda prueba de descripción","Sin Fecha",12,"PENDIENTE",50));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","EIMC3","Actividad de prueba","11/11/2000","10/11/2002","tercera prueba de descripción esta vez mucho más larga más de una línea","Sin Fecha",2,"PENDIENTE",60));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","F2","Control de lectura","11/11/2000","11/11/2000","cuarta prueba de descripción","Sin Fecha",32,"PENDIENTE",70));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI2",1,"PDM115","F2","Ensayo de prueba","11/11/2000","10/10/2010","prueba corta","Sin Fecha",52,"PENDIENTE",70));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","EIMC3","Actividad de prueba","11/11/2000","10/11/2002","tercera prueba de descripción esta vez mucho más larga más de una línea","Sin Fecha",2,"EN CURSO",60));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","F2","Control de lectura","11/11/2000","11/11/2000","cuarta prueba de descripción","Sin Fecha",32,"FINALIZADO",70));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI2",1,"PDM115","F2","Ensayo de prueba","11/11/2000","10/10/2010","prueba corta","Sin Fecha",52,"EN CURSO",70));
                 evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI2",1,"PDM115","F2","Parcial de unidad","11/11/2000","11/11/2000","prueba de distintas longitudes de descripción","Sin Fecha",102,"PENDIENTE",100));
                 //Local
                 localDao.insertarLocal(new Local("LComp1","Laboratorio 1","Escuela de Ingeniería de Sistemas Informáticos", 13.721252d, -89.200072d));

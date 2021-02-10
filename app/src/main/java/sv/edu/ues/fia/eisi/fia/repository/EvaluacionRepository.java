@@ -108,8 +108,12 @@ public class EvaluacionRepository {
     }
 
     //obtener alumno async
-    public Alumno obtenerAlumnoConUsuario(int string)throws InterruptedException, ExecutionException, TimeoutException{
+    public Alumno obtenerAlumnoConUsuario(int string) throws InterruptedException, ExecutionException, TimeoutException{
         return new obtenerAlumnoConUsuarioAsyncTask(evaluacionDao).execute(string).get(12, TimeUnit.SECONDS);
+    }
+
+    public LiveData<List<Evaluacion>> obtenerEvaluacionesPorEstado(String estado) throws InterruptedException, ExecutionException, TimeoutException{
+        return new obtenerEvaluacionPorEstadoAsyncTask(evaluacionDao).execute(estado).get(12, TimeUnit.SECONDS);
     }
 
     //Async de insertar
@@ -281,6 +285,20 @@ public class EvaluacionRepository {
         @Override
         protected List<Evaluacion> doInBackground(Void... voids) {
             return docenteDao.obtenerEvaluacionesAsync();
+        }
+    }
+
+    //async obtener evaluaciones por estado
+    private static class obtenerEvaluacionPorEstadoAsyncTask extends AsyncTask<String, Void, LiveData<List<Evaluacion>>>{
+        private EvaluacionDao evaluacionDao;
+
+        private obtenerEvaluacionPorEstadoAsyncTask(EvaluacionDao evaluacionDao){
+            this.evaluacionDao = evaluacionDao;
+        }
+
+        @Override
+        protected LiveData<List<Evaluacion>> doInBackground(String... strings) {
+            return evaluacionDao.obtenerEvaluacionPorEstado(strings[0]);
         }
     }
     //obtener escuela de docente seleccionado

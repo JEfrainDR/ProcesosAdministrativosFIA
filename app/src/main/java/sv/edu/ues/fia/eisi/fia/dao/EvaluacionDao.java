@@ -101,4 +101,8 @@ public interface EvaluacionDao {
             "inner join Escuela on AreaAdm.idEscuelaFK=Escuela.idEscuela "+
             "where Escuela.idEscuela=:id")
     LiveData<List<Asignatura>> obtenerAsignaturaPorEscuela(int id);
+
+    //recuperar las evaluaciones por su estado
+    @Query("select * from Evaluacion where estado == :estado")
+    LiveData<List<Evaluacion>> obtenerEvaluacionPorEstado(String estado);
 }

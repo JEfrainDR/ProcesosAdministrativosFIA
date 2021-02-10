@@ -3,6 +3,8 @@ package sv.edu.ues.fia.eisi.fia.Tabs;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,8 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import sv.edu.ues.fia.eisi.fia.Adapters.EvaluacionesAdapter;
 import sv.edu.ues.fia.eisi.fia.R;
+import sv.edu.ues.fia.eisi.fia.ViewModel.EvaluacionViewModel;
+import sv.edu.ues.fia.eisi.fia.entity.Evaluacion;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +35,7 @@ public class Pendientes extends Fragment {
     private String mParam1;
     private String mParam2;
     private EvaluacionesAdapter evaluacionesAdapter;
+    private EvaluacionViewModel evaluacionViewModel;
 
     public Pendientes() {
         // Required empty public constructor
@@ -70,6 +77,20 @@ public class Pendientes extends Fragment {
         RecyclerView recyclerEvaluaciones = view.findViewById(R.id.recycler_evaluaciones_pendientes);
         recyclerEvaluaciones.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerEvaluaciones.setAdapter(evaluacionesAdapter);
+
+        try {
+            evaluacionViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication()).create(EvaluacionViewModel.class);
+            evaluacionViewModel.obtenerEvaluacionesPorEstado("PENDIENTE").observe(getActivity(), new Observer<List<Evaluacion>>() {
+                @Override
+                public void onChanged(List<Evaluacion> evaluacions) {
+                    evaluacionesAdapter.setListEvaluaciones(evaluacions);
+                    evaluacionesAdapter.notifyDataSetChanged();
+                }
+            });
+        } catch (Exception e){
+
+        }
+
         return view;
     }
 }

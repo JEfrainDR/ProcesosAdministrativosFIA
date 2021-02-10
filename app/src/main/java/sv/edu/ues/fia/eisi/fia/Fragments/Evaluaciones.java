@@ -79,7 +79,7 @@ public class Evaluaciones extends Fragment {
         FloatingActionButton btnAddEvaluacion = view.findViewById(R.id.btn_add_evaluacion);
         final ViewPager viewPager = view.findViewById(R.id.viewPager);
 
-        final TabFragmentAdapter tabFragmentAdapter = new TabFragmentAdapter(getActivity().getSupportFragmentManager(),tabLayout.getTabCount());
+        final TabFragmentAdapter tabFragmentAdapter = new TabFragmentAdapter(getChildFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(tabFragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -98,6 +98,8 @@ public class Evaluaciones extends Fragment {
         tabLayout.getTabAt(0).setText(R.string.item_pendientes);
         tabLayout.getTabAt(1).setText(R.string.item_en_curso);
         tabLayout.getTabAt(2).setText(R.string.item_finalizado);
+
+        viewPager.setCurrentItem(1, false);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         return view;

@@ -8,9 +8,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import sv.edu.ues.fia.eisi.fia.R;
+import sv.edu.ues.fia.eisi.fia.entity.Evaluacion;
 
 public class EvaluacionesAdapter extends RecyclerView.Adapter<EvaluacionesAdapter.ViewHolderEvaluaciones> {
+
+    private List<Evaluacion> listEvaluaciones = new ArrayList<>();
+
+    public void setListEvaluaciones(List<Evaluacion> listEvaluaciones) {
+        this.listEvaluaciones = listEvaluaciones;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ViewHolderEvaluaciones onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -20,12 +32,16 @@ public class EvaluacionesAdapter extends RecyclerView.Adapter<EvaluacionesAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderEvaluaciones holder, int position) {
-
+        holder.textTitulo.setText(listEvaluaciones.get(position).getNomEvaluacion().toUpperCase());
+        holder.textAsignatura.setText(listEvaluaciones.get(position).getCodigoAsignaturaFK());
+        holder.textDescripcion.setText(listEvaluaciones.get(position).getDescripcion());
+        holder.textFechaInicio.setText(listEvaluaciones.get(position).getFechaInicio());
+        holder.textFechaFin.setText(listEvaluaciones.get(position).getFechaFin());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listEvaluaciones.size();
     }
 
     public class ViewHolderEvaluaciones extends RecyclerView.ViewHolder {
