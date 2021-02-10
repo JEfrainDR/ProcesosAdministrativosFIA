@@ -12,7 +12,7 @@
             android:layout_height="match_parent">
 
             <Spinner
-                android:id="@+id/input_asignatura"
+                android:id="@+id/spinner_asignatura"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -228,7 +228,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/input_descripcion" />
 
             <Spinner
-                android:id="@+id/input_local"
+                android:id="@+id/spinner_local"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -248,7 +248,7 @@
                 android:background="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/input_asignatura" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner_asignatura" />
 
             <View
                 android:id="@+id/divider5"
@@ -260,7 +260,7 @@
                 android:background="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/input_local" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner_local" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -274,7 +274,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider4" />
 
-            <LinearLayout
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:id="@+id/layout_recursos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -288,13 +288,39 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_icon_add">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_inbox_24" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_empty"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                        app:layout_constraintStart_toStartOf="@+id/imageView2"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_recursos"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     tools:listitem="@layout/recurso_item" />
 
-            </LinearLayout>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <ImageView
                 android:id="@+id/img_icon_add"

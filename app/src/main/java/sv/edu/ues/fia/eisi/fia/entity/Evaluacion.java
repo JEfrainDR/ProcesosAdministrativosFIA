@@ -10,6 +10,7 @@ public class Evaluacion {
 
     @PrimaryKey(autoGenerate = true)
     private int idEvaluacion;
+
     @ForeignKey(
             entity = Docente.class,
             parentColumns = "carnetDocente",
@@ -44,8 +45,7 @@ public class Evaluacion {
     private int notaMaxima;
 
 
-    public Evaluacion(int idEvaluacion, String carnetDocenteFK, int idTipoEvaluacionFK, String codigoAsignaturaFK, String idLocalFK, String nomEvaluacion, String fechaInicio, String fechaFin, String descripcion, String fechaEntregaNotas, int numParticipantes, String estado, int notaMaxima) {
-        this.idEvaluacion = idEvaluacion;
+    public Evaluacion(String carnetDocenteFK, int idTipoEvaluacionFK, String codigoAsignaturaFK, String idLocalFK, String nomEvaluacion, String fechaInicio, String fechaFin, String descripcion, String fechaEntregaNotas, int numParticipantes, String estado, int notaMaxima) {
         this.carnetDocenteFK = carnetDocenteFK;
         this.idTipoEvaluacionFK = idTipoEvaluacionFK;
         this.codigoAsignaturaFK = codigoAsignaturaFK;

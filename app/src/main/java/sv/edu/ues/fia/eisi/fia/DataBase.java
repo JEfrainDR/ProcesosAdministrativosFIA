@@ -72,7 +72,7 @@ import sv.edu.ues.fia.eisi.fia.entity.Usuario;
         Local.class, PrimeraRevision.class, SegundaRevision.class, SegundaRevision_Docente.class,
         SolicitudExtraordinario.class, SolicitudImpresion.class, TipoEvaluacion.class, Usuario.class,
         AccesoUsuario.class, OpcionCrud.class, Bitacora.class
-    }, version = 1)
+    }, version = 2)
 public abstract class DataBase extends RoomDatabase {
 
     private static DataBase instance;
@@ -243,7 +243,7 @@ public abstract class DataBase extends RoomDatabase {
         protected Void doInBackground(Void... voids) {
             try {
                 //Opciones Crud para menus.
-                /*opcionCrudDao.insertOpcionCrud(new OpcionCrud("AlumnoMenu",0));//1
+                opcionCrudDao.insertOpcionCrud(new OpcionCrud("AlumnoMenu",0));//1
                 opcionCrudDao.insertOpcionCrud(new OpcionCrud("EvaluacionMenu",0));
                 opcionCrudDao.insertOpcionCrud(new OpcionCrud("CargoMenu",0));//3
                 opcionCrudDao.insertOpcionCrud(new OpcionCrud("AreaAdmMenu",0));
@@ -553,12 +553,12 @@ public abstract class DataBase extends RoomDatabase {
                 tipoEvaluacionDao.insertarTipoEv(new TipoEvaluacion("Repetido"));
                 tipoEvaluacionDao.insertarTipoEv(new TipoEvaluacion("Diferido"));
                 //Evaluación
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","Parcial de prueba","11/11/2000","12/11/2005","descripción de parcial de prueba","Sin Fecha",2,40));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","Tarea de prueba","11/11/2000","11/11/2000","segunda prueba de descripción","Sin Fecha",12,50));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","Actividad de prueba","11/11/2000","10/11/2002","tercera prueba de descripción esta vez mucho más larga más de una línea","Sin Fecha",2,60));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","Control de lectura","11/11/2000","11/11/2000","cuarta prueba de descripción","Sin Fecha",32,70));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI2",1,"PDM115","Ensayo de prueba","11/11/2000","10/10/2010","prueba corta","Sin Fecha",52,70));
-                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI2",1,"PDM115","Parcial de unidad","11/11/2000","11/11/2000","prueba de distintas longitudes de descripción","Sin Fecha",102,100));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","LComp1","Parcial de prueba","11/11/2000","12/11/2005","descripción de parcial de prueba","Sin Fecha",2,"PENDIENTE",40));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","BIB301","Tarea de prueba","11/11/2000","11/11/2000","segunda prueba de descripción","Sin Fecha",12,"PENDIENTE",50));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","EIMC3","Actividad de prueba","11/11/2000","10/11/2002","tercera prueba de descripción esta vez mucho más larga más de una línea","Sin Fecha",2,"PENDIENTE",60));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI3",1,"DSI115","F2","Control de lectura","11/11/2000","11/11/2000","cuarta prueba de descripción","Sin Fecha",32,"PENDIENTE",70));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI2",1,"PDM115","F2","Ensayo de prueba","11/11/2000","10/10/2010","prueba corta","Sin Fecha",52,"PENDIENTE",70));
+                evaluacionDao.insertEvaluacion(new Evaluacion("DOCEISI2",1,"PDM115","F2","Parcial de unidad","11/11/2000","11/11/2000","prueba de distintas longitudes de descripción","Sin Fecha",102,"PENDIENTE",100));
                 //Local
                 localDao.insertarLocal(new Local("LComp1","Laboratorio 1","Escuela de Ingeniería de Sistemas Informáticos", 13.721252d, -89.200072d));
                 localDao.insertarLocal(new Local("EIIC2", "Cúbiculo 2", "Escuela de Ingeniería Industrial", 13.721303d, -89.200351d));
@@ -587,7 +587,7 @@ public abstract class DataBase extends RoomDatabase {
                 segundaRevisionDao.insertSegundaRevision(new SegundaRevision(2, "9/06/2020", "12:22:00", "8/06/2020"));
                 //Solicitud de extraordinario
                 solicitudExtraordinarioDao.insertSolicitudExtraordinario(new SolicitudExtraordinario("PP15001", 1, 3, "Enfermedad", "16-06-2020", true));
-                */
+
             }catch (Exception e){
                 Log.d("equisde: ", e.getMessage() + "\n");
                 e.fillInStackTrace();

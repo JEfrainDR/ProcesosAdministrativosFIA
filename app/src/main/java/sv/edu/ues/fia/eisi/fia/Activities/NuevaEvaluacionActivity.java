@@ -3,8 +3,11 @@ package sv.edu.ues.fia.eisi.fia.Activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,8 +29,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +50,10 @@ import sv.edu.ues.fia.eisi.fia.Adapters.RecursosAdapter;
 import sv.edu.ues.fia.eisi.fia.Fragments.SetFechaDialogFragment;
 import sv.edu.ues.fia.eisi.fia.Fragments.SetHoraDialogFragment;
 import sv.edu.ues.fia.eisi.fia.R;
+import sv.edu.ues.fia.eisi.fia.ViewModel.AsignaturaViewModel;
+import sv.edu.ues.fia.eisi.fia.ViewModel.LocalViewModel;
+import sv.edu.ues.fia.eisi.fia.entity.Asignatura;
+import sv.edu.ues.fia.eisi.fia.entity.Local;
 import sv.edu.ues.fia.eisi.fia.entity.Recurso;
 
 public class NuevaEvaluacionActivity extends AppCompatActivity {
@@ -55,9 +64,14 @@ public class NuevaEvaluacionActivity extends AppCompatActivity {
     private TextView textFechaInicio, textFechaFin, textHoraInicio, textHoraFin;
     private ImageView imgFechainicio, imgFechaFin, imgHoraInicio, imgHoraFin, imgAdd;
     private RecyclerView recyclerRecuros;
-    private LinearLayout layout_recursos;
+    private Spinner spAsignatura, spLocal;
+    private ConstraintLayout layout_recursos;
     private List<Recurso> listRecurso;
     private RecursosAdapter adapter;
+    private ArrayList<String> listAsignatura, listLocal;
+    private ArrayAdapter<String> adapterAsignatura, adapterLocal;
+    private AsignaturaViewModel asignaturaViewModel;
+    private LocalViewModel localViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +83,11 @@ public class NuevaEvaluacionActivity extends AppCompatActivity {
         solicitarPermisos();
 
         listRecurso = new ArrayList<>();
+        listAsignatura = new ArrayList<>();
+        listLocal = new ArrayList<>();
+
+        asignaturaViewModel = new ViewModelProvider.AndroidViewModelFactory(getApplication()).create(AsignaturaViewModel.class);
+        localViewModel = new ViewModelProvider.AndroidViewModelFactory(getApplication()).create(LocalViewModel.class);
 
         adapter = new RecursosAdapter(listRecurso);
 
@@ -82,10 +101,43 @@ public class NuevaEvaluacionActivity extends AppCompatActivity {
         imgHoraFin = findViewById(R.id.img_hora_fin);
         imgAdd = findViewById(R.id.img_icon_add);
         recyclerRecuros = findViewById(R.id.recycler_recursos);
-        layout_recursos = findViewById(R.id.layout_recursos);
+        layout_recursos = findViewById(R.id.layout_empty);
+        spAsignatura = findViewById(R.id.spinner_asignatura);
+        spLocal = findViewById(R.id.spinner_local);
         recyclerRecuros.setLayoutManager(new LinearLayoutManager(NuevaEvaluacionActivity.this));
         recyclerRecuros.setAdapter(adapter);
         recyclerRecuros.setVisibility(View.INVISIBLE);
+
+        adapterAsignatura = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listAsignatura);
+        adapterAsignatura.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spAsignatura.setAdapter(adapterAsignatura);
+        adapterLocal = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listLocal);
+        adapterLocal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spLocal.setAdapter(adapterLocal);
+
+        try {
+            asignaturaViewModel.getAllAsignaturas().observe(this, new Observer<List<Asignatura>>() {
+                @Override
+                public void onChanged(List<Asignatura> asignaturas) {
+                    for(Asignatura asignatura:asignaturas){
+                        listAsignatura.add(asignatura.getCodigoAsignatura() + " - " + asignatura.getNomasignatura());
+                    }
+                    adapterAsignatura.notifyDataSetChanged();
+                }
+            });
+            localViewModel.getAllLocales().observe(this, new Observer<List<Local>>() {
+                @Override
+                public void onChanged(List<Local> locals) {
+                    for(Local local:locals){
+                        listLocal.add(local.getIdLocal() + " - " + local.getNombreLocal());
+                    }
+                    adapterLocal.notifyDataSetChanged();
+                }
+            });
+        } catch (Exception e){
+            Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show();
+        }
+
 
         Calendar calendar = Calendar.getInstance();
         Date date = calendar.getTime();
@@ -183,6 +235,7 @@ public class NuevaEvaluacionActivity extends AppCompatActivity {
                 Uri fullPhotoUri = data.getData();
                 if(recyclerRecuros.getVisibility() == View.INVISIBLE){
                     recyclerRecuros.setVisibility(View.VISIBLE);
+                    layout_recursos.setVisibility(View.INVISIBLE);
                 }
                 // Do work with full size photo saved at fullPhotoUri
                 //Toast.makeText(this,getFileName(getPathMethod(this, fullPhotoUri)),Toast.LENGTH_SHORT).show();

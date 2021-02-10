@@ -47,4 +47,5 @@
     <string name="text_local">Local:</string>
     <string name="text_recursos">Recursos:</string>
     <string name="text_no_recursos">Añadir</string>
+    <string name="text_empty">No se han seleccionado recursos</string>
 </resources>

@@ -91,12 +91,12 @@ public class Evaluaciones extends Fragment {
             }
         });
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_playlist_play_24);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_view_headline_24);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_view_headline_24);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_playlist_play_24);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_baseline_playlist_add_check_24);
 
-        tabLayout.getTabAt(0).setText(R.string.item_en_curso);
-        tabLayout.getTabAt(1).setText(R.string.item_pendientes);
+        tabLayout.getTabAt(0).setText(R.string.item_pendientes);
+        tabLayout.getTabAt(1).setText(R.string.item_en_curso);
         tabLayout.getTabAt(2).setText(R.string.item_finalizado);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

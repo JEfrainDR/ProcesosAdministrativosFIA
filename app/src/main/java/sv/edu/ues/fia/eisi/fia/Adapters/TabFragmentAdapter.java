@@ -12,7 +12,7 @@ import sv.edu.ues.fia.eisi.fia.Tabs.Pendientes;
 
 public class TabFragmentAdapter extends FragmentPagerAdapter {
     int numTabs;
-    String[] titulos={"EN CURSO","PENDIENTES","FINALIZADO"};
+    String[] titulos={"PENDIENTES","EN CURSO","FINALIZADO"};
     public TabFragmentAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
         this.numTabs=behavior;
@@ -23,9 +23,9 @@ public class TabFragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new EnCurso();
-            case 1:
                 return new Pendientes();
+            case 1:
+                return new EnCurso();
             case 2:
                 return new Finalizado();
             default:
