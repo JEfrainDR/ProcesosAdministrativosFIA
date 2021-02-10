@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String USERNAME = "USER_NAME";
+    public static final String USER_PASSWORD = "USER_PASSWORD";
+
     Button btnInicio;
 
     @Override
@@ -15,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+
+        PreferenceSingleton.getInstance().Initialize(getApplicationContext());
+        String usuario=PreferenceSingleton.getInstance().readPreference(USERNAME);
+        String password=PreferenceSingleton.getInstance().readPreference(USER_PASSWORD);
 
         btnInicio = findViewById(R.id.btn_inicio);
         btnInicio.setOnClickListener(new View.OnClickListener() {

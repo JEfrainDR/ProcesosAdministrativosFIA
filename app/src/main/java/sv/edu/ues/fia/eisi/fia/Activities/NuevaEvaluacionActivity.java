@@ -1,5 +1,6 @@
 package sv.edu.ues.fia.eisi.fia.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -23,6 +24,7 @@ import android.provider.OpenableColumns;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -135,6 +137,11 @@ public class NuevaEvaluacionActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
     public void setFechaDialog(){
         Bundle bundle = new Bundle();
         bundle.putString("fecha_actual",textFechaInicio.getText().toString());
@@ -156,11 +163,16 @@ public class NuevaEvaluacionActivity extends AppCompatActivity {
     }
 
     private void añadirRecurso(){
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        intent.setType("*/*");
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        // Only the system receives the ACTION_OPEN_DOCUMENT, so no need to test.
-        startActivityForResult(intent, REQUEST_IMAGE_OPEN);
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "Debes proporcionar los permisos necesarios para proceder...", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.setType("*/*");
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            startActivityForResult(intent, REQUEST_IMAGE_OPEN);
+        }
     }
 
     @Override
@@ -369,11 +381,8 @@ public class NuevaEvaluacionActivity extends AppCompatActivity {
     //Con este metodo obtenemos el nombre del documento dada la ruta especifica donde este se encuentra.
     private String getFileName(String filePath){
         String[] path=filePath.split("/");
-        String name;
-        int position=0;
-        position=path.length-1;
-        name=path[position];
-        return name;
+        int position=path.length-1;
+        return path[position];
     }
 
     private void solicitarPermisos() {
