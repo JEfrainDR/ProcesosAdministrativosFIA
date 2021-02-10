@@ -105,4 +105,8 @@ public interface EvaluacionDao {
     //recuperar las evaluaciones por su estado
     @Query("select * from Evaluacion where estado == :estado")
     LiveData<List<Evaluacion>> obtenerEvaluacionPorEstado(String estado);
+
+    //recuperar las evaluaciones por su estado order_by
+    @Query("select * from Evaluacion where estado == :estado order by :orden asc")
+    LiveData<List<Evaluacion>> obtenerEvaluacionPorEstadoOrderBy(String estado, String orden);
 }

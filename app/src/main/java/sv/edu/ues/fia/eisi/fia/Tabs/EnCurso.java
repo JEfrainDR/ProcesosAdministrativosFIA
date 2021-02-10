@@ -1,8 +1,11 @@
 package sv.edu.ues.fia.eisi.fia.Tabs;
 
+import android.app.Activity;
+import android.app.Application;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 
 import sv.edu.ues.fia.eisi.fia.Adapters.EvaluacionesAdapter;
 import sv.edu.ues.fia.eisi.fia.R;
@@ -36,9 +41,16 @@ public class EnCurso extends Fragment {
     private String mParam2;
     private EvaluacionesAdapter evaluacionesAdapter;
     private EvaluacionViewModel evaluacionViewModel;
+    private Application application;
+    private Activity activity;
+    public String orden = "codigoAsignaturaFK";
 
     public EnCurso() {
         // Required empty public constructor
+    }
+
+    public void setOrden(String orden) {
+        this.orden = orden;
     }
 
     /**
@@ -73,14 +85,16 @@ public class EnCurso extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_en_curso, container, false);
+        application = getActivity().getApplication();
+        activity = getActivity();
         evaluacionesAdapter = new EvaluacionesAdapter();
         RecyclerView recyclerEvaluaciones = view.findViewById(R.id.recycler_evaluaciones_en_curso);
         recyclerEvaluaciones.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerEvaluaciones.setAdapter(evaluacionesAdapter);
 
         try {
-            evaluacionViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication()).create(EvaluacionViewModel.class);
-            evaluacionViewModel.obtenerEvaluacionesPorEstado("EN CURSO").observe(getActivity(), new Observer<List<Evaluacion>>() {
+            evaluacionViewModel = new ViewModelProvider.AndroidViewModelFactory(application).create(EvaluacionViewModel.class);
+            evaluacionViewModel.obtenerEvaluacionesPorEstadoOrderBy("EN CURSO",orden).observe(getActivity(), new Observer<List<Evaluacion>>() {
                 @Override
                 public void onChanged(List<Evaluacion> evaluacions) {
                     evaluacionesAdapter.setListEvaluaciones(evaluacions);
@@ -92,5 +106,24 @@ public class EnCurso extends Fragment {
         }
 
         return view;
+    }
+
+    public void ordenarLista(String orden){
+        try {
+            evaluacionViewModel = new ViewModelProvider.AndroidViewModelFactory(application).create(EvaluacionViewModel.class);
+            evaluacionViewModel.obtenerEvaluacionesPorEstadoOrderBy("EN CURSO",orden).observe((LifecycleOwner) activity, new Observer<List<Evaluacion>>() {
+                @Override
+                public void onChanged(List<Evaluacion> evaluacions) {
+                    evaluacionesAdapter.setListEvaluaciones(evaluacions);
+                    evaluacionesAdapter.notifyDataSetChanged();
+                }
+            });
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
     }
 }

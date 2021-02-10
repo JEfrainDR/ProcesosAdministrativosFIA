@@ -106,4 +106,8 @@ public class EvaluacionViewModel extends AndroidViewModel {
     public LiveData<List<Evaluacion>> obtenerEvaluacionesPorEstado(String estado) throws InterruptedException, ExecutionException, TimeoutException {
         return repo.obtenerEvaluacionesPorEstado(estado);
     }
+
+    public LiveData<List<Evaluacion>> obtenerEvaluacionesPorEstadoOrderBy(String estado, String orden) throws InterruptedException, ExecutionException, TimeoutException {
+        return repo.obtenerEvaluacionesPorEstadoOrderBy(estado, orden);
+    }
 }

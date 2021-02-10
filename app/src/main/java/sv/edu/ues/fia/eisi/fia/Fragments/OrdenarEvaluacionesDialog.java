@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 
 import sv.edu.ues.fia.eisi.fia.R;
+import sv.edu.ues.fia.eisi.fia.Tabs.EnCurso;
+import sv.edu.ues.fia.eisi.fia.Tabs.Finalizado;
+import sv.edu.ues.fia.eisi.fia.Tabs.Pendientes;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +37,10 @@ public class OrdenarEvaluacionesDialog extends DialogFragment {
     private String mParam2;
 
     private RadioGroup radioOrdenar;
+    private String orden;
+    private EnCurso enCurso;
+    private Finalizado finalizado;
+    private Pendientes pendientes;
 
     public OrdenarEvaluacionesDialog() {
         // Required empty public constructor
@@ -69,20 +76,24 @@ public class OrdenarEvaluacionesDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        enCurso = new EnCurso();
+        finalizado = new Finalizado();
+        pendientes = new Pendientes();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.text_odenar_por);
         builder.setPositiveButton(R.string.text_ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String orden = "fecha_inicio";
+                orden = "fechaInicio";
                 switch (radioOrdenar.getCheckedRadioButtonId()){
                     case R.id.radio_asignatura:
-                        orden = "asignatura";break;
+                        orden = "codigoAsignaturaFK";break;
                     case R.id.radio_fecha_inicio:
-                        orden = "fecha_inicio";break;
+                        orden = "fechaInicio";break;
                     case R.id.radio_fecha_fin:
-                        orden = "fecha_fin";break;
+                        orden = "fechaFin";break;
                 }
+                cambiarOrden(orden);
                 dialog.dismiss();
             }
         }).setNegativeButton(R.string.text_cancel, new DialogInterface.OnClickListener() {
@@ -97,4 +108,11 @@ public class OrdenarEvaluacionesDialog extends DialogFragment {
         builder.setView(view);
         return builder.create();
     }
+
+    private void cambiarOrden(String orden){
+        enCurso.setOrden(orden);
+        //pendientes.ordenarLista(orden);
+        //finalizado.ordenarLista(orden);
+    }
+
 }

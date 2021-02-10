@@ -116,6 +116,10 @@ public class EvaluacionRepository {
         return new obtenerEvaluacionPorEstadoAsyncTask(evaluacionDao).execute(estado).get(12, TimeUnit.SECONDS);
     }
 
+    public LiveData<List<Evaluacion>> obtenerEvaluacionesPorEstadoOrderBy(String estado, String orden) throws InterruptedException, ExecutionException, TimeoutException {
+        return new obtenerEvaluacionPorEstadoOrderByAsyncTask(evaluacionDao, orden).execute(estado).get(12, TimeUnit.SECONDS);
+    }
+
     //Async de insertar
     private static class InsertarEvaluacionAsyncTask extends AsyncTask<Evaluacion, Void, Void>{
         private EvaluacionDao evaluacionDao;
@@ -301,6 +305,23 @@ public class EvaluacionRepository {
             return evaluacionDao.obtenerEvaluacionPorEstado(strings[0]);
         }
     }
+
+    //async obtener evaluaciones por estado order_by
+    private static class obtenerEvaluacionPorEstadoOrderByAsyncTask extends AsyncTask<String, Void, LiveData<List<Evaluacion>>>{
+        private EvaluacionDao evaluacionDao;
+        private String orden;
+
+        public obtenerEvaluacionPorEstadoOrderByAsyncTask(EvaluacionDao evaluacionDao, String orden) {
+            this.evaluacionDao = evaluacionDao;
+            this.orden = orden;
+        }
+
+        @Override
+        protected LiveData<List<Evaluacion>> doInBackground(String... strings) {
+            return evaluacionDao.obtenerEvaluacionPorEstadoOrderBy(strings[0],orden);
+        }
+    }
+
     //obtener escuela de docente seleccionado
     public List<Evaluacion> obtenerEvaluacionNoLiveData() throws InterruptedException, ExecutionException, TimeoutException {
         //se puede ajustar el timeout para cancelar la recuperación del dato, el primer parametro indica la cantidad, el segundo la unidad
